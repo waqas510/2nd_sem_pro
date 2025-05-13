@@ -18,13 +18,17 @@ class homeController extends Controller
     {
         return view('about');
     }
+    public function videosPage()
+    {
+        return view('videos');
+    }
     public function toursPage()
     {
         return view('tours');
     }
-    public function discographyPage()
+    public function descographyPage()
     {
-        return view('discography');
+        return view('descography');
     }
     public function blogdetailsPage()
     {

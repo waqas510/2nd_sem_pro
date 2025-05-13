@@ -22,8 +22,16 @@ class homeController extends Controller
     {
         return view('tours');
     }
-    public function demographyPage()
+    public function discographyPage()
     {
-        return view('demography');
+        return view('discography');
+    }
+    public function blogdetailsPage()
+    {
+        return view('blog-details');
+    }
+    public function blogPage()
+    {
+        return view('blog');
     }
 }

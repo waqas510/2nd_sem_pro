@@ -9,4 +9,6 @@ Route::get('index', [homeController::class, 'homePage']);
 Route::get('contact', [homeController::class, 'contactPage']);
 Route::get('about', [homeController::class, 'aboutPage']);
 Route::get('tours', [homeController::class, 'toursPage']);
-Route::get('demography', [homeController::class, 'demographyPage']);
+Route::get('discography', [homeController::class, 'discographyPage']);
+Route::get('blogdetails', [homeController::class, 'blogdetailsPage']);
+Route::get('blog', [homeController::class, 'blogPage']);

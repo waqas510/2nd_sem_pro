@@ -39,7 +39,7 @@
                                 <li class="active"><a href="./">Home</a></li>
                                 <li><a href="./about">About</a></li>
                                 <li><a href="./descography">Discography</a></li>
-                                <li><a href="./tour">Tours</a></li>
+                                <li><a href="./tours">Tours</a></li>
                                 <li><a href="./videos">Videos</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">

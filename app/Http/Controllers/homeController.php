@@ -18,4 +18,8 @@ class homeController extends Controller
     {
         return view('about');
     }
+    public function toursPage()
+    {
+        return view('tours');
+    }
 }

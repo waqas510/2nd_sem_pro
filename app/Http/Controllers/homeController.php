@@ -22,4 +22,8 @@ class homeController extends Controller
     {
         return view('tours');
     }
+    public function demographyPage()
+    {
+        return view('demography');
+    }
 }

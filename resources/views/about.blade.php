@@ -2,8 +2,7 @@
 @section('title', 'DJOZ | contact')
 
 @section('pageContent')
-
-<br><br><br>
+<br><br>
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">
     <div class="container">

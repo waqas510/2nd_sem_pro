@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\categoryController;
 use App\Http\Controllers\homeController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,3 +15,6 @@ Route::get('tours', [homeController::class, 'toursPage']);
 Route::get('descography', [homeController::class, 'descographyPage']);
 Route::get('blogdetails', [homeController::class, 'blogdetailsPage']);
 Route::get('blog', [homeController::class, 'blogPage']);
+
+// Category Work
+Route::get('catCreate', [categoryController::class,'Create']);

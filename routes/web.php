@@ -17,4 +17,4 @@ Route::get('blogdetails', [homeController::class, 'blogdetailsPage']);
 Route::get('blog', [homeController::class, 'blogPage']);
 
 // Category Work
-Route::get('catCreate', [categoryController::class,'Create']);
+Route::get('cat-create', [categoryController::class,'Create']);

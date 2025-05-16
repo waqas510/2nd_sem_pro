@@ -22,4 +22,5 @@ Route::get('admin', [categoryController::class, 'Admin']);
 
 // Category Work
 Route::get('cat-create', [categoryController::class,'Create']);
+Route::get('cat-show', [categoryController::class,'showCat']);
 Route::post('saveCat', [categoryController::class,'Save']);

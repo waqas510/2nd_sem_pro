@@ -54,7 +54,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-tags me-2"></i>Categories</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="cat-Create" class="dropdown-item">Create Category</a>
-                            <a href="typography.html" class="dropdown-item">Show Category</a>
+                            <a href="cat-show" class="dropdown-item">Show Category</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">

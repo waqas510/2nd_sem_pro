@@ -12,6 +12,11 @@ class categoryController extends Controller
     {
         return view('Admin.index');
     }
+    public function showCat()
+    {
+        $res = DB::select("SELECT * FROM `tbl_category`");
+        return view('Admin.cat-show', ['res'=> $res]);
+    }
     public function Create()
     {
         return view('Admin.cat-create');

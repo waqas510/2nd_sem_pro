@@ -13,7 +13,8 @@
     <div class="row">
         <div class="col">
             <br><br><br>
-            <form method="POST">
+            <form method="POST" action="{{ url('saveCat') }}" enctype="multipart/form-data">
+              @csrf
                 <div class="mb-3">
                   <label  class="form-label">Categor Name</label>
                   <input type="text" class="form-control" name="catName" required>
@@ -24,10 +25,10 @@
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">Category Image/Icon (optional)</label>
-                  <input type="text" class="form-control" name="catImg">
+                  <input type="file" class="form-control" name="catImg">
                 </div>
                 
-                <button type="submit" class="btn btn-primary w-100" name="saveCat">Submit</button>
+                <button type="submit" class="btn btn-primary w-100" >Submit</button>
         </form>
             </div>
           </div>

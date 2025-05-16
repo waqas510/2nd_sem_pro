@@ -16,5 +16,10 @@ Route::get('descography', [homeController::class, 'descographyPage']);
 Route::get('blogdetails', [homeController::class, 'blogdetailsPage']);
 Route::get('blog', [homeController::class, 'blogPage']);
 
+// Admin Penal Work
+Route::get('admin', [categoryController::class, 'Admin']);
+
+
 // Category Work
 Route::get('cat-create', [categoryController::class,'Create']);
+Route::post('saveCat', [categoryController::class,'Save']);

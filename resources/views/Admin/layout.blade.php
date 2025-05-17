@@ -29,9 +29,12 @@
 
     <!-- Template Stylesheet -->
     <link href="Admin/css/style.css" rel="stylesheet">
+
+    <!-- Datatables Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.1/css/dataTables.dataTables.css" />
 </head>
 <body>
-    
+    <div class="container-fluid position-relative bg-white d-flex p-0">
     <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
@@ -53,7 +56,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-tags me-2"></i>Categories</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="cat-Create" class="dropdown-item">Create Category</a>
+                            <a href="cat-create" class="dropdown-item">Create Category</a>
                             <a href="cat-show" class="dropdown-item">Show Category</a>
                         </div>
                     </div>
@@ -205,6 +208,14 @@
     <!-- Template Javascript -->
     <script src="Admin/js/main.js"></script>
 
-            </div>
+    <!-- Datatables Javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.3.1/js/dataTables.js"></script>
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+
 </body>
 </html>

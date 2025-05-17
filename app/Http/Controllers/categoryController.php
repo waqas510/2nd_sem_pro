@@ -42,6 +42,6 @@ class categoryController extends Controller
 
         
         DB::insert("INSERT INTO `tbl_category`(`cat_name`, `cat_des`, `cat_img`) VALUES (?,?,?)",[$name, $des, $fileName]);
-        return view('Admin.index');
+        return view('Admin.cat-show');
     }
 }

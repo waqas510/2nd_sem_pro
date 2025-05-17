@@ -31,7 +31,7 @@
                 <th scope="row">{{ $user->cat_id}}</th>
                 <td>{{ $user->cat_name}}</td>
                 <td>{{ $user->cat_des}}</td>
-                <td>{{ $user->cat_des}}</td>
+                <td><img src="Admin/img/cat-images/{{ $user->cat_img}}" alt="" height="50px" width="100px"></td>
                 <td><input type="submit" value="Edit" class="btn btn-warning"> </td>
                 <td><input type="submit" value="Delete" class="btn btn-danger"></td>
               </tr>

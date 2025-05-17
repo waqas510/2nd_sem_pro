@@ -10,7 +10,7 @@ class categoryController extends Controller
      //Admin penal
     public function Admin()
     {
-        return view('Admin.index');
+        return view('Admin.adminindex');
     }
     public function showCat()
     {

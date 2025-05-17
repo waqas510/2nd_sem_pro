@@ -17,7 +17,7 @@ Route::get('blogdetails', [homeController::class, 'blogdetailsPage']);
 Route::get('blog', [homeController::class, 'blogPage']);
 
 // Admin Penal Work
-Route::get('admin', [categoryController::class, 'Admin']);
+Route::get('adminpenal', [categoryController::class, 'Admin']);
 
 
 // Category Work

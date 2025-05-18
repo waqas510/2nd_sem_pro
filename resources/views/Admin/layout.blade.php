@@ -56,21 +56,21 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-tags me-2"></i>Categories</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="cat-create" class="dropdown-item">Create Category</a>
-                            <a href="cat-show" class="dropdown-item">Show Category</a>
+                            <a href="{{ url('cat-create')}}" class="dropdown-item">Create Category</a>
+                            <a href="{{ url('cat-show')}}" class="dropdown-item">Show Category</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-music me-2"></i>Songs</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="product/create" class="dropdown-item">Add New Song</a>
-                            <a href="#" class="dropdown-item">Show All Songs</a>
+                            <a href="{{ url('product/create')}}" class="dropdown-item">Add New Song</a>
+                            <a href="{{ url('#') }}" class="dropdown-item">Show All Songs</a>
                         </div>
                     </div>
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-tv me-2"></i>Shows</a>
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-video me-2"></i>Videos</a>
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Bookings</a>
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Account</a>
+                    <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-tv me-2"></i>Shows</a>
+                    <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-video me-2"></i>Videos</a>
+                    <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Bookings</a>
+                    <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Account</a>
                 </div>
             </nav>
         </div>
@@ -79,10 +79,10 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="{{ url('index') }}" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
+                <a href="{{ url('#') }}" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
@@ -90,12 +90,12 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="{{ url('#') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
                             <span class="d-none d-lg-inline-flex">Message</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
+                            <a href="{{ url('#') }}" class="dropdown-item">
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="{{ asset('Admin/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
@@ -106,33 +106,33 @@
                             </a>
                            
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
+                            <a href="{{ url('#') }}" class="dropdown-item text-center">See all message</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="{{ url('#') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
                             <span class="d-none d-lg-inline-flex">Notificatin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
+                            <a href="{{ url('#') }}" class="dropdown-item">
                                 <h6 class="fw-normal mb-0">Profile updated</h6>
                                 <small>15 minutes ago</small>
                             </a>
                             
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                            <a href="{{ url('#') }}" class="dropdown-item text-center">See all notifications</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="{{ url('#') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="{{ asset('Admin/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">Hafiz Waqas</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="{{ url('#') }}" class="dropdown-item">My Profile</a>
+                            <a href="{{ url('#') }}" class="dropdown-item">Settings</a>
+                            <a href="{{ url('#') }}" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>

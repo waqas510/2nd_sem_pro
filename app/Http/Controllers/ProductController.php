@@ -31,7 +31,39 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $request->validate([
+            'pro_name' => 'required | string',
+            'pro_des' => 'required | string',
+            'catId' => 'required | integer',
+            'pro_image' => 'required | image|mimes:png,jpg,jpeg',
+        ]);
+
+        //image move/upload
+        // if($request->hasFile('pro_image'))
+        // {
+        //     $file = $request->file('pro_image');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $fileName = 'Song'.'-'.time().'.'.$extension;
+        //     $file->move(public_path('Admin/img/pro-images/'), $fileName);
+        // }
+        // else{
+        //     $fileName = null;
+        //     return redirect()->back()->with('alert', 'Image file not uploaded!');
+        // }
+            $imageName = 'Song'.'-'.time().'.'.$request->pro_image->extension();
+            $request->pro_image->move(public_path('Admin/img/pro-images/'), $imageName);
+
+
+        //Data Save
+        Product::create([
+            'pro_name' => $request->pro_name,
+            'pro_des' => $request->pro_des,
+            'catId' => $request->catId,
+            'pro_image' => $request->$imageName,
+        ]);
+        return redirect()->route('product.create')->with('success','Product Created successfully!');
+        
     }
 
     /**

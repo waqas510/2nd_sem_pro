@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,5 @@ Route::get('adminpenal', [categoryController::class, 'Admin']);
 Route::get('cat-create', [categoryController::class,'Create']);
 Route::get('cat-show', [categoryController::class,'showCat']);
 Route::post('saveCat', [categoryController::class,'Save']);
+
+Route::resource('product', ProductController::class);

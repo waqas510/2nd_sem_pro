@@ -1,5 +1,5 @@
 @extends('Admin.layout')
-@section('title', 'Admin | Create Category')
+@section('title', 'Admin | Add Songs')
 
 @section('adminContent')
 
@@ -16,16 +16,28 @@
             <form method="POST" action="{{ url('savepro') }}" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
-                  <label  class="form-label">Song Title</label>
-                  <input type="text" class="form-control" name="proName" required>
+                  <label  class="form-label" style="font-size: 20px">Song Title</label>
+                  <input type="text" class="form-control" name="pro_name" required>
                 </div>
+
                 <div class="mb-3">
-                  <label  class="form-label">Song Description(optional)</label>
-                  <input type="text" class="form-control" name="proDes" required>
+                  <label  class="form-label" style="font-size: 20px">Song Description</label>
+                  <input type="text" class="form-control" name="pro_des" required>
                 </div>
+
                 <div class="mb-3">
-                  <label  class="form-label">Song Image/Icon </label>
-                  <input type="file" class="form-control" name="proImg" required>
+                  <label  class="form-label" style="font-size: 20px">Song Category</label><br>
+                  <select name="catId" class="form-label" style="height: 40px; width: 250px; border-radius: 8px;" required>
+                    <option value="">Select Category</option>
+                    @foreach ($res as $user)
+                    <option value="{{ $user->cat_id}}">{{ $user->cat_name}}</option>
+                    @endforeach
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label  class="form-label" style="font-size: 20px;">Song Image/Icon </label>
+                  <input type="file" class="form-control" name="pro_image" required>
                 </div>
                 
                 <button type="submit" class="btn btn-primary w-100" >Submit</button>

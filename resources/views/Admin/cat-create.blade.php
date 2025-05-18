@@ -20,12 +20,12 @@
                   <input type="text" class="form-control" name="catName" required>
                 </div>
                 <div class="mb-3">
-                  <label  class="form-label">Category Description (optional)</label>
-                  <input type="text" class="form-control" name="catDes">
+                  <label  class="form-label">Category Description</label>
+                  <input type="text" class="form-control" name="catDes" required>
                 </div>
                 <div class="mb-3">
-                  <label  class="form-label">Category Image/Icon (optional)</label>
-                  <input type="file" class="form-control" name="catImg">
+                  <label  class="form-label">Category Image/Icon</label>
+                  <input type="file" class="form-control" name="catImg" required>
                 </div>
                 
                 <button type="submit" class="btn btn-primary w-100" >Submit</button>

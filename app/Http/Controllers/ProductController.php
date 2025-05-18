@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -20,7 +21,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('Admin.product-create');
+        $res = DB::select("SELECT * FROM `tbl_category`");
+        return view('Admin.product-create', ['res'=> $res]);
+
     }
 
     /**

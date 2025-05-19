@@ -42,10 +42,17 @@
                                 <li><a href="./tours">Tours</a></li>
                                 <li><a href="./videos">Videos</a></li>
                                 <li><a href="./contact">Contact</a></li>
+                                <li><a href="#">Account</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Name</a></li>
+                                        <li><a href="#">Setting</a></li>
+                                    </ul>
+                                </li>
                             </ul>
+                            
                         </nav>
                         <div class="header__right__social" >
-                            <a href="login"><i class="fa fa-sign-in fa-2x" title="Sign-in"></i></a>
+                            <a href="login"><i class="fa fa-sign-in fa-2x" title="Login"></i></a>
                             <a href="register"><i class="fa fa-user-plus fa-2x" title="Register"></i></a>
                         </div>
                     </div>

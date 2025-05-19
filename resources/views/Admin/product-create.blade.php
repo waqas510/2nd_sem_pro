@@ -30,7 +30,7 @@
                   <select name="catId" class="form-label" style="height: 40px; width: 250px; border-radius: 8px;" required>
                     <option value="">Select Category</option>
                     @foreach ($res as $user)
-                    <option value="{{ $user->cat_id}}">{{ $user->cat_id}}</option>
+                    <option value="{{ $user->cat_id}}">{{ $user->cat_name}}</option>
                     @endforeach
                   </select>
                 </div>

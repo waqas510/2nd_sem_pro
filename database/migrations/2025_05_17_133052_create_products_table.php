@@ -15,9 +15,9 @@ return new class extends Migration
             $table->uuid('pro_id')->primary();
             $table->string('pro_name');
             $table->string('pro_des');
-            $table->string('pro_image');
+            $table->string('pro_audios');
             $table->integer('catId');
-            $table->foreign('catId')->references('cat_id')->on('tbl_category')->onDelete('CASCADE');
+            $table->foreign('catId')->references('catid')->on('tbl_category')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

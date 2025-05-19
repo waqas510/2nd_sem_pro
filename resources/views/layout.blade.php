@@ -41,21 +41,12 @@
                                 <li><a href="./descography">Discography</a></li>
                                 <li><a href="./tours">Tours</a></li>
                                 <li><a href="./videos">Videos</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="./about">About</a></li>
-                                        <li><a href="./blog">Blog</a></li>
-                                        <li><a href="./blog-details">Blog Details</a></li>
-                                    </ul>
-                                </li>
                                 <li><a href="./contact">Contact</a></li>
                             </ul>
                         </nav>
-                        <div class="header__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <div class="header__right__social" >
+                            <a href="login"><i class="fa fa-sign-in fa-2x" title="Sign-in"></i></a>
+                            <a href="register"><i class="fa fa-user-plus fa-2x" title="Register"></i></a>
                         </div>
                     </div>
                 </div>

@@ -30,14 +30,14 @@
                   <select name="catId" class="form-label" style="height: 40px; width: 250px; border-radius: 8px;" required>
                     <option value="">Select Category</option>
                     @foreach ($res as $user)
-                    <option value="{{ $user->cat_id}}">{{ $user->cat_name}}</option>
+                    <option value="{{ $user->cat_id}}">{{ $user->cat_id}}</option>
                     @endforeach
                   </select>
                 </div>
 
                 <div class="mb-3">
                   <label  class="form-label" style="font-size: 20px;">Song Image/Icon </label>
-                  <input type="file" class="form-control" name="pro_image" required>
+                  <input type="file" accept="audio/*" class="form-control" name="pro_audios" required>
                 </div>
                 
                 <button type="submit" class="btn btn-primary w-100" >Submit</button>

@@ -9,7 +9,7 @@ class product extends Model
     protected $fillable = [
         'pro_name',
         'pro_des',
-        'pro_image',
+        'pro_audios',
         'catId',
     ];
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenicatedSessionController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProductController;
@@ -27,12 +28,30 @@ Route::get('cat-show', [categoryController::class,'showCat']);
 Route::post('saveCat', [categoryController::class,'Save']);
 
 Route::resource('product', ProductController::class);
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+Route::get('/login',function()
+{
+    return view('auth.login');
+})->name('login');
+
+Route::post('/login', [AuthenicatedSessionController::class,'store']);
+Route::post('/logout', [AuthenicatedSessionController::class,'destroy'])->name('logout');
+
+Route::middleware(['auth'])->get('/adminpenal',function()
+{
+    return view('Admin.adminindex');
+})->name('adminpenal');
+
+Route::get('/index', function()
+{
+    return view('index');
+})->name('index');

@@ -13,7 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = product::with('category')->get();
+        return view('index', compact('$products'));
     }
 
     /**
@@ -38,21 +39,21 @@ class ProductController extends Controller
         'pro_audios' => 'required|file|mimes:mp3,wav,ogg|max:10240',
     ]);
 
-    if ($request->hasFile('pro_audios')) {
-        $audioFile = $request->file('pro_audios');
-        $audioName = 'Song-'.time().'.'.$audioFile->getClientOriginalExtension();
-        $audioFile->move(public_path('Admin/img/pro_audios'), $audioName);
-        $audioPath = 'Admin/img/pro_audios/'.$audioName;
-    }
+    // if ($request->hasFile('pro_audios')) {
+    //     $audioFile = $request->file('pro_audios');
+    //     $audioName = 'Song-'.time().'.'.$audioFile->getClientOriginalExtension();
+    //     $audioFile->move(public_path('Admin/img/pro_audios'), $audioName);
+    //     $audioPath = 'Admin/img/pro_audios/'.$audioName;
+    // }
 
-    Product::create([
-        'pro_name' => $request->pro_name,
-        'pro_des' => $request->pro_des,
-        'catId' => $request->catId,
-        'pro_audios' => $audioPath ?? null,
-    ]);
+    // Product::create([
+    //     'pro_name' => $request->pro_name,
+    //     'pro_des' => $request->pro_des,
+    //     'catId' => $request->catId,
+    //     'pro_audios' => $audioPath ?? null,
+    // ]);
 
-    return redirect()->end()->with('success', 'Product Created successfully!');
+    // return redirect()->end()->with('success', 'Product Created successfully!');
 }
     /**
      * Display the specified resource.

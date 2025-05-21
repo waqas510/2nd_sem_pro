@@ -44,14 +44,17 @@ class ProductController extends Controller
     if ($request->hasFile('pro_audios')) {
         $audioName = 'Song-'.time().'.'.$request->pro_audios->getClientOriginalExtension();
         $request->pro_audios->move(public_path('Admin/img/pro_audios'), $audioName);
+        $data['pro_audios']=$audioName;
     }
 
-    Product::create([
-        'pro_name' => $request->pro_name,
-        'pro_des' => $request->pro_des,
-        'catId' => $request->catId,
-        'pro_audios' => $audioName,
-    ]);
+        product::create($data);
+        
+    // Product::create([
+    //     'pro_name' => $request->pro_name,
+    //     'pro_des' => $request->pro_des,
+    //     'catId' => $request->catId,
+    //     'pro_audios' => $audioName,
+    // ]);
 
     return redirect()->end()->with('success', 'Product Created successfully!');
 }

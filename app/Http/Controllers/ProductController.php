@@ -39,21 +39,21 @@ class ProductController extends Controller
         'pro_audios' => 'required|file|mimes:mp3,wav,ogg|max:10240',
     ]);
 
-    // if ($request->hasFile('pro_audios')) {
-    //     $audioFile = $request->file('pro_audios');
-    //     $audioName = 'Song-'.time().'.'.$audioFile->getClientOriginalExtension();
-    //     $audioFile->move(public_path('Admin/img/pro_audios'), $audioName);
-    //     $audioPath = 'Admin/img/pro_audios/'.$audioName;
-    // }
+    $data = $request->all();
 
-    // Product::create([
-    //     'pro_name' => $request->pro_name,
-    //     'pro_des' => $request->pro_des,
-    //     'catId' => $request->catId,
-    //     'pro_audios' => $audioPath ?? null,
-    // ]);
+    if ($request->hasFile('pro_audios')) {
+        $audioName = 'Song-'.time().'.'.$request->pro_audios->getClientOriginalExtension();
+        $request->pro_audios->move(public_path('Admin/img/pro_audios'), $audioName);
+    }
 
-    // return redirect()->end()->with('success', 'Product Created successfully!');
+    Product::create([
+        'pro_name' => $request->pro_name,
+        'pro_des' => $request->pro_des,
+        'catId' => $request->catId,
+        'pro_audios' => $audioName,
+    ]);
+
+    return redirect()->end()->with('success', 'Product Created successfully!');
 }
     /**
      * Display the specified resource.

@@ -46,10 +46,13 @@
                                     <ul class="dropdown">
                                         <li><a href="#">Name</a></li>
                                         <li><a href="#">Setting</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </nav>
                         <div class="header__right__social" >
                             <a href="login"><i class="fa fa-sign-in fa-2x" title="Login"></i></a>

@@ -32,7 +32,7 @@ class AuthenicatedSessionController extends Controller
     public function destroy()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('index');
     }
     
 }

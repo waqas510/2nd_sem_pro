@@ -64,7 +64,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-music me-2"></i>Songs</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ url('product/create')}}" class="dropdown-item">Add New Song</a>
-                            <a href="{{ url('#') }}" class="dropdown-item">Show All Songs</a>
+                            <a href="{{ url('product/show') }}" class="dropdown-item">Show All Songs</a>
                         </div>
                     </div>
                     <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-tv me-2"></i>Shows</a>

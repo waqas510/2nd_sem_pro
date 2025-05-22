@@ -58,9 +58,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(product $product)
+    public function show(request $request)
     {
-        //
+        $data = $request->all();
+        return view('Admin.product-show', ['res'=> $data]);
     }
 
     /**

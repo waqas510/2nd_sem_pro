@@ -19,6 +19,7 @@
                 <th scope="col">Product ID</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Description</th>
+                <th scope="col">Product Category</th>
                 <th scope="col">Product Image</th>
                 <th scope="col">Edit Product </th>
                 <th scope="col">Delete Product </th>

@@ -1,5 +1,5 @@
 @extends('Admin.layout')
-@section('title', 'Admin | Create Category')
+@section('title', 'Mixify  | Create Category')
 
 @section('adminContent')
 

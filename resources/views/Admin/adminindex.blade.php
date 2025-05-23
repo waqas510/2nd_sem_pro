@@ -1,5 +1,5 @@
 @extends('Admin.layout')
-@section('title', 'Admin Panel')
+@section('title', 'Mixify | Admin Panel')
 
 @section('adminContent')
 

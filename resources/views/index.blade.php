@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'DJOZ | Home')
+@section('title', 'Mixify  | Home')
 
 @section('pageContent')
     <!-- Hero Section Begin -->

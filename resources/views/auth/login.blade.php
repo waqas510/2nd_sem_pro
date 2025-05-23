@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+             <i><img src="{{ asset('Admin/img/Mixify_logo.png') }}" alt="" height="150px" width="150px"></i>
         </x-slot>
 
         <x-validation-errors class="mb-4" />

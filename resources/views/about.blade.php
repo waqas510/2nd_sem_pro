@@ -1,22 +1,9 @@
 @extends('layout')
-@section('title', 'DJOZ | contact')
+@section('title', 'Mixify | About Us')
 
 @section('pageContent')
 <br><br>
-<!-- Breadcrumb Begin -->
-<div class="breadcrumb-option">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb__links">
-                    <a href="/"><i class="fa fa-home"></i> Home</a>
-                    <span>About</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Breadcrumb End -->
+
 
 <!-- Skills Section Begin -->
 <section class="skills spad">

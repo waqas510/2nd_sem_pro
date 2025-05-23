@@ -1,5 +1,5 @@
 @extends('Admin.layout')
-@section('title', 'Admin | Add Songs')
+@section('title', 'Mixify  | Add New Songs')
 
 @section('adminContent')
 

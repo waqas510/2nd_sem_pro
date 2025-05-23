@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'DJOZ | contact')
+@section('title', 'Mixify | Blog Details')
 
 @section('pageContent')
 <br><br><br>

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'DJOZ | contact')
+@section('title', 'Mixify | Videos')
 
 @section('pageContent')
 

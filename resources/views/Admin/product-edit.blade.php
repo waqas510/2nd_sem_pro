@@ -5,7 +5,7 @@
 
 <div class="jumbotron jumbotron-fluid text-center text-dark mt-4">
   <div class="container">
-    <h1 class="display-4">Add Songs</h1>
+    <h1 class="display-4">Update Songs</h1>
     <p class="lead">Please Fill Out All Information</p>
   </div>
 </div>
@@ -13,20 +13,20 @@
     <div class="row">
         <div class="col">
             <br><br><br>
-            <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('product.edit') }}" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
-                  <label  class="form-label" style="font-size: 20px">Song Title</label>
+                  <label  class="form-label" style="font-size: 20px">Update Song Title</label>
                   <input type="text" class="form-control" name="pro_name" required>
                 </div>
 
                 <div class="mb-3">
-                  <label  class="form-label" style="font-size: 20px">Song Description</label>
+                  <label  class="form-label" style="font-size: 20px">Update Song Description</label>
                   <input type="text" class="form-control" name="pro_des" required>
                 </div>
 
                 <div class="mb-3">
-                  <label  class="form-label" style="font-size: 20px">Song Category</label><br>
+                  <label  class="form-label" style="font-size: 20px">Update Song Category</label><br>
                   <select name="catId" class="form-label" style="height: 40px; width: 250px; border-radius: 8px;" required>
                     <option value="">Select Category</option>
                     @foreach ($res as $user)
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="mb-3">
-                  <label  class="form-label" style="font-size: 20px;">Add Song </label>
+                  <label  class="form-label" style="font-size: 20px;">Update Song</label>
                   <input type="file" accept="audio/*" class="form-control" name="pro_audios" required>
                 </div>
                 

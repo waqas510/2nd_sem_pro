@@ -34,8 +34,8 @@
                 <td>{{ $user->pro_des}}</td>
                 <td>{{ $user->catId}}</td>
                 <td><audio src="{{ asset('Admin/Music/' . $user->pro_audios) }}" alt="" controls></audio></td>
-                <td><input type="submit" value="Edit" class="btn btn-warning"> </td>
-                <td><input type="submit" value="Delete" class="btn btn-danger"></td>
+                <td><a href="{{ route('product.edit',$user->pro_id) }}"  class="btn btn-warning">Edit</a></td>
+                <td><a href="#"  class="btn btn-danger">Delete</a></td>
               </tr>
               @endforeach
     

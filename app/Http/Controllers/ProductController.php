@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = product::with('category')->get();
-        return view('index', compact('$products'));
+        return view('index', compact('products'));
     }
 
     /**
@@ -60,8 +60,9 @@ class ProductController extends Controller
      */
     public function show(request $request)
     {
-        $data = DB::table('products')->get(); 
+        $data = DB::table('products')->get();
         return view('Admin.product-show', ['res'=> $data]);
+        
     
     }
 
@@ -70,7 +71,10 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        //
+        // $data = DB::select("SELECT * FROM `tbl_category`");
+        // $data = product::all();
+        $data = DB::table('products')->get();
+        return view('Admin.product-edit', ['res'=> $data]);
     }
 
     /**

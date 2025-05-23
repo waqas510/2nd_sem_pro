@@ -16,13 +16,13 @@
             <table class="table table-dark display" id="myTable">
             <thead>
               <tr>
-                <th scope="col">Product ID</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Product Description</th>
-                <th scope="col">Product Category</th>
-                <th scope="col">Product Image</th>
-                <th scope="col">Edit Product </th>
-                <th scope="col">Delete Product </th>
+                <th scope="col">Song ID</th>
+                <th scope="col">Song Name</th>
+                <th scope="col">Song Description</th>
+                <th scope="col">Song Category</th>
+                <th scope="col">Song</th>
+                <th scope="col">Edit Song </th>
+                <th scope="col">Delete Song </th>
               </tr>
             </thead>
             <tbody>
@@ -32,8 +32,8 @@
                 <th scope="row">{{ $user->pro_id}}</th>
                 <td>{{ $user->pro_name}}</td>
                 <td>{{ $user->pro_des}}</td>
-                <td>{{ $user->cat_name}}</td>
-                <td><img src="{{ asset('Admin/Music/' . $user->pro_audios) }}" alt="" height="50px" width="100px"></td>
+                <td>{{ $user->catId}}</td>
+                <td><audio src="{{ asset('Admin/Music/' . $user->pro_audios) }}" alt="" controls></audio></td>
                 <td><input type="submit" value="Edit" class="btn btn-warning"> </td>
                 <td><input type="submit" value="Delete" class="btn btn-danger"></td>
               </tr>

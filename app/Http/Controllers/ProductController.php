@@ -60,8 +60,9 @@ class ProductController extends Controller
      */
     public function show(request $request)
     {
-        $data = $request->all();
+        $data = DB::table('products')->get(); 
         return view('Admin.product-show', ['res'=> $data]);
+    
     }
 
     /**

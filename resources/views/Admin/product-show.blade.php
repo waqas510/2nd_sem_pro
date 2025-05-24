@@ -29,12 +29,12 @@
 
               @foreach($res as $user)
                 <tr>
-                <th scope="row">{{ $user->pro_id}}</th>
+                <th scope="row">{{ $user->id}}</th>
                 <td>{{ $user->pro_name}}</td>
                 <td>{{ $user->pro_des}}</td>
                 <td>{{ $user->catId}}</td>
                 <td><audio src="{{ asset('Admin/Music/' . $user->pro_audios) }}" alt="" controls></audio></td>
-                <td><a href="{{ route('product.edit',$user->pro_id) }}"  class="btn btn-warning">Edit</a></td>
+                <td><a href="{{ route('product.edit',$user->id) }}"  class="btn btn-warning">Edit</a></td>
                 <td><a href="#"  class="btn btn-danger">Delete</a></td>
               </tr>
               @endforeach

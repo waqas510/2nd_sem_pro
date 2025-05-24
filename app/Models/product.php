@@ -11,6 +11,7 @@ class product extends Model
         return $this->belongsTo(category::class);
     } 
     protected $fillable = [
+        'id',
         'pro_name',
         'pro_des',
         'pro_audios',

@@ -28,7 +28,7 @@
 
               @foreach($res as $user)
                 <tr>
-                <th scope="row">{{ $user->cat_id}}</th>
+                <th scope="row">{{ $user->id}}</th>
                 <td>{{ $user->cat_name}}</td>
                 <td>{{ $user->cat_des}}</td>
                 <td><img src="{{ asset('Admin/img/cat-images/' . $user->cat_img) }}" alt="" height="50px" width="100px"></td>

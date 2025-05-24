@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col">
             <br><br><br>
-            <form method="POST" action="{{ route('product.edit') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('product.update') }}" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
                   <label  class="form-label" style="font-size: 20px">Update Song Title</label>

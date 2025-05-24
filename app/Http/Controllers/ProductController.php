@@ -82,7 +82,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        //
+        $data = $request->all();
+        return view('Admin.product-edit', ['res'=> $data]);
     }
 
     /**

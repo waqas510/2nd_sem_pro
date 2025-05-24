@@ -39,9 +39,8 @@ class categoryController extends Controller
             $fileName = null;
             return redirect()->back()->with('alert', 'Image file not uploaded!');
         }
-
         
         DB::insert("INSERT INTO `tbl_category`(`cat_name`, `cat_des`, `cat_img`) VALUES (?,?,?)",[$name, $des, $fileName]);
-        return view('Admin.cat-show');
+        return redirect()->back()->with('success', 'Product Created successfully!');
     }
 }

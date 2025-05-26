@@ -20,7 +20,7 @@ class AuthenicatedSessionController extends Controller
             $user = Auth::user();
             if($user->role=='admin')
             {
-                return redirect()->route('adminpenal');
+                return redirect()->route('dashboard');
             }
             else{
                 return redirect()->route('index');
@@ -32,7 +32,7 @@ class AuthenicatedSessionController extends Controller
     public function destroy()
     {
         Auth::logout();
-        return redirect()->route('index');
+        return redirect()->route('login');
     }
     
 }

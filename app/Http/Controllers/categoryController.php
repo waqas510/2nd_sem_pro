@@ -2,45 +2,77 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
-     //Admin penal
-    public function Admin()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return view('Admin.adminindex');
+        //
     }
-    public function showCat()
-    {
-        $res = DB::select("SELECT * FROM `tbl_category`");
-        return view('Admin.cat-show', ['res'=> $res]);
-    }
-    public function Create()
-    {
-        return view('Admin.cat-create');
-    }
-    public function Save(request $request)
-    {
-        $name = $request->input('catName');
-        $des = $request->input('catDes');
 
-        if($request->hasFile('catImg'))
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('Admin.catCreate');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        if($request->hasFile('cat_img'))
         {
-            $file = $request->file('catImg');
-            $extension = $file->getClientOriginalExtension();
-            $fileName = $name.'-'.time().'.'.$extension;
-            
-
-            $file->move(public_path('Admin/img/cat-images/'), $fileName);
+            $fileName = 'Category-'.time().'.'.$request->cat_img->getClientOriginalExtension();
+            $request->cat_img->move(public_path('Admin/img/cat-images/'), $fileName);
+            $data['cat_img']=$fileName;
         }
         else{
             $fileName = null;
             return redirect()->back()->with('alert', 'Image file not uploaded!');
         }
-        
-        DB::insert("INSERT INTO `tbl_category`(`cat_name`, `cat_des`, `cat_img`) VALUES (?,?,?)",[$name, $des, $fileName]);
-        return redirect()->back()->with('success', 'Product Created successfully!');
+        category::create($data);
+        return redirect()->route('cat-show')->with('success', 'Category Created successfully!');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(category $category)
+    {
+        $data = $category->all();
+        return view('Admin.cat-show', ['res'=> $data]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(category $category)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, category $category)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(category $category)
+    {
+        //
     }
 }

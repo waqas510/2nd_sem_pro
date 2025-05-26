@@ -2,42 +2,30 @@
 
 use App\Http\Controllers\Auth\AuthenicatedSessionController;
 use App\Http\Controllers\categoryController;
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', [homeController::class, 'homePage']);
-Route::get('index', [homeController::class, 'homePage']);
-Route::get('contact', [homeController::class, 'contactPage']);
-Route::get('about', [homeController::class, 'aboutPage']);
-Route::get('videos', [homeController::class, 'videosPage']);
-Route::get('tours', [homeController::class, 'toursPage']);
-Route::get('descography', [homeController::class, 'descographyPage']);
-Route::get('blogdetails', [homeController::class, 'blogdetailsPage']);
-Route::get('blog', [homeController::class, 'blogPage']);
-
-// Admin Penal Work
-Route::get('adminpenal', [categoryController::class, 'Admin']);
+//Page controller Routes
+Route::get('/dashboard',[PageController::class,'index'])->name('dashboard');
+Route::get('/',[PageController::class,'Home'])->name('index');
+Route::get('/index',[PageController::class,'Home'])->name('index'); 
+Route::get('/about',[PageController::class,'About'])->name('about');
+Route::get('/descography',[PageController::class,'Discography'])->name('descography');
+Route::get('/tours',[PageController::class,'Tours'])->name('tours');
+Route::get('/videos',[PageController::class,'Videos'])->name('videos');
+Route::get('/contact',[PageController::class,'Contact'])->name('contact');
 
 
-// Category Work
-Route::get('cat-create', [categoryController::class,'Create']);
-Route::get('cat-show', [categoryController::class,'showCat']);
-Route::post('saveCat', [categoryController::class,'Save']);
+//Other category & products route
+Route::post('/saveCat',[categoryController::class,'store']);
+Route::get('/category/show',[categoryController::class,'show'])->name('cat-show');
+Route::get('/product/show',[ProductController::class,'show'])->name('product.show');
 
-Route::resource('product', ProductController::class);
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
+// Resourse route Category & products
+Route::resource('products',ProductController::class);
+Route::resource('category',categoryController::class);
 
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
 
 Route::get('/login',function()
 {
@@ -47,12 +35,8 @@ Route::get('/login',function()
 Route::post('/login', [AuthenicatedSessionController::class,'store']);
 Route::post('/logout', [AuthenicatedSessionController::class,'destroy'])->name('logout');
 
-Route::middleware(['auth'])->get('/adminpenal',function()
+Route::middleware(['auth'])->get('/dashboard',function()
 {
     return view('Admin.adminindex');
-})->name('adminpenal');
+})->name('dashboard');
 
-Route::get('/index', function()
-{
-    return view('index');
-})->name('index');

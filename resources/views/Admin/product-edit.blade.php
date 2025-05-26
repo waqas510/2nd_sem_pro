@@ -12,8 +12,8 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <br><br><br>
-            <form method="POST" action="{{ route('product.update') }}" enctype="multipart/form-data">
+            <br><br><br> {{-- action="{{ route('product.update')}}" --}}
+            <form method="POST"  enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
                   <label  class="form-label" style="font-size: 20px">Update Song Title</label>
@@ -30,7 +30,7 @@
                   <select name="catId" class="form-label" style="height: 40px; width: 250px; border-radius: 8px;" required>
                     <option value="">Select Category</option>
                     @foreach ($res as $user)
-                    <option value="{{ $user->cat_id}}">{{ $user->cat_name}}</option>
+                    <option value="{{ $user->id}}">{{ $user->cat_name}}</option>
                     @endforeach
                   </select>
                 </div>

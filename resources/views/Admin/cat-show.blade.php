@@ -2,7 +2,13 @@
 @section('title', 'Mixify  | All Category')
 
 @section('adminContent')
-
+@if (Session::has('success'))
+  <div class="col-md-12">
+    <div class="alert alert-success">
+      {{ Session::get('success') }}
+    </div>
+  </div>
+@endif
 <div class="jumbotron jumbotron-fluid text-center text-dark mt-4">
   <div class="container">
     <h1 class="display-4">All Category</h1>
@@ -11,6 +17,7 @@
 </div>
 <div class="container">
     <div class="row">
+           <div><a href="{{ url('category/create') }}" class="btn btn-primary float-end">Create Categories</a></div>
         <div class="col">
             <br><br>
             <table class="table table-dark display" id="myTable">

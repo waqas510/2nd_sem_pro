@@ -56,14 +56,14 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-tags me-2"></i>Categories</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ url('cat-create')}}" class="dropdown-item">Create Category</a>
-                            <a href="{{ url('cat-show')}}" class="dropdown-item">Show Category</a>
+                            <a href="{{ route('category.create')}}" class="dropdown-item">Create Category</a>
+                            <a href="{{ url('category/show')}}" class="dropdown-item">Show Category</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-music me-2"></i>Songs</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ url('product/create')}}" class="dropdown-item">Add New Song</a>
+                            <a href="{{ route('products.create')}}" class="dropdown-item">Add New Song</a>
                             <a href="{{ url('product/show') }}" class="dropdown-item">Show All Songs</a>
                         </div>
                     </div>

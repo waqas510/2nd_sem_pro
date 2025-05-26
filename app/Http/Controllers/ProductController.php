@@ -61,8 +61,8 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        $res = DB::select("SELECT * FROM `categories`");
-        return view('Admin.product-edit',['res'=>$res]);
+        $cat = DB::select("SELECT * FROM `categories`");
+        return view('Admin.product-edit',compact('product','cat'));
     }
 
     /**
@@ -70,7 +70,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        //
+        $data = $request->all();
+    if ($request->hasFile('song')) {
+        $songName = 'Song-'.time().'.'.$request->song->getClientOriginalExtension();
+        $request->song->move(public_path('Admin/Music/'), $songName);
+        $data['song']=$songName;
+    }
+
+        $product->update($data);
+        return redirect()->route('product.show')->with('success', 'Product Updated successfully!');
     }
 
     /**
@@ -78,6 +86,7 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('product.show')->with('success', 'Product Deleted successfully!');
     }
 }

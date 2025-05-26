@@ -39,8 +39,8 @@
                 <td>{{ $user->cat_name}}</td>
                 <td>{{ $user->cat_des}}</td>
                 <td><img src="{{ asset('Admin/img/cat-images/' . $user->cat_img) }}" alt="" height="50px" width="100px"></td>
-                <td><input type="submit" value="Edit" class="btn btn-warning"> </td>
-                <td><input type="submit" value="Delete" class="btn btn-danger"></td>
+                <td><a href="{{ route('category.edit',$user->id) }}"  class="btn btn-warning">Edit</a></td>
+                <td><a href="#"  class="btn btn-danger">Delete</a></td>
               </tr>
               @endforeach
     

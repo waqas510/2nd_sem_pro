@@ -57,7 +57,8 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+        $cat = $category->all();
+        return view('Admin.category-edit',compact('cat'));
     }
 
     /**
@@ -65,7 +66,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        $data = $request->all();
+        if($request->hasFile('cat_img'))
+        {
+            $fileName = 'Category-'.time().'.'.$request->cat_img->getClientOriginalExtension();
+            $request->cat_img->move(public_path('Admin/img/cat-images/'), $fileName);
+            $data['cat_img']=$fileName;
+        }
+        else{
+            $fileName = null;
+            return redirect()->back()->with('alert', 'Image file not uploaded!');
+        }
+        category::create($data);
+        return redirect()->route('cat-show')->with('success', 'Category Created successfully!');
     }
 
     /**

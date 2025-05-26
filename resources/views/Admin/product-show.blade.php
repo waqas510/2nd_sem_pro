@@ -40,15 +40,19 @@
                 <td>{{ $user->song_name}}</td>
                 <td>{{ $user->song_des}}</td>
                 <td>{{ $user->catid}}</td>
-                <td><audio src="{{ asset('Admin/Music/' . $user->song) }}" alt="" controls></audio></td>
-                <td><a href="{{ route('products.edit',$user->id) }}"  class="btn btn-warning">Edit</a></td>
-                <td><a href="#"  class="btn btn-danger">Delete</a></td>
+                <td><audio src="{{asset('Admin/Music/' . $user->song)}}" alt="" controls></audio></td>
+                <td><a href="{{route('products.edit',$user->id)}}"  class="btn btn-warning">Edit</a></td>
+                <td>
+                <form action="{{route('products.destroy',$user->id)}}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" onclick="return confirm('Are Your Sure?')">Delete</button>
+                </form>
+                </td>
               </tr>
               @endforeach
-    
-    
           </tbody>
-</table>
+            </table>
             </div>
           </div>
         </div>

@@ -40,7 +40,13 @@
                 <td>{{ $user->cat_des}}</td>
                 <td><img src="{{ asset('Admin/img/cat-images/' . $user->cat_img) }}" alt="" height="50px" width="100px"></td>
                 <td><a href="{{ route('category.edit',$user->id) }}"  class="btn btn-warning">Edit</a></td>
-                <td><a href="#"  class="btn btn-danger">Delete</a></td>
+                <td>
+                <form action="{{route('category.destroy',$user->id)}}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" onclick="return confirm('Are Your Sure?')">Delete</button>
+                </form>
+                </td>
               </tr>
               @endforeach
     

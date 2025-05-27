@@ -20,9 +20,9 @@
       <div><a href="{{ url('category/show') }}" class="btn btn-primary float-end">Show Categories</a></div>
         <div class="col">
             <br><br><br>
-            <form method="POST" enctype="multipart/form-data">
+            <form method="post" action="{{ route('category.update', $category) }}" enctype="multipart/form-data">
               @csrf
-              {{-- value="{{ $cat->cat_name}}" --}}
+              @method('PUT')
                 <div class="mb-3">                 
                   <label  class="form-label">Update Category Name</label>
                   <input type="text" value="{{ $category->cat_name}}" class="form-control" name="cat_name" required>

@@ -44,7 +44,7 @@
 
                 <div class="mb-3"> 
                   <label  class="form-label" style="font-size: 20px;">Old Song</label><br>
-                  <audio src="{{ asset('Admin/Music/' . $product->song) }}" alt="" controls></audio>
+                  <audio src="{{ asset('Admin/Music/' . $product->song) }}" alt="music" controls></audio>
                 </div>
                 <div class="mb-3"> 
                   <label  class="form-label" style="font-size: 20px;">Update Song</label>

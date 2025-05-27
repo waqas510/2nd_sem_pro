@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = category::all();
+        return view('index', compact('category'));
     }
 
     /**
@@ -57,8 +58,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        $cat = $category->all();
-        return view('Admin.category-edit',compact('cat'));
+        return view('Admin.category-edit',['category'=> $category]);
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
             $fileName = null;
             return redirect()->back()->with('alert', 'Image file not uploaded!');
         }
-        category::create($data);
+        $category->update($data);
         return redirect()->route('cat-show')->with('success', 'Category Created successfully!');
     }
 
@@ -86,6 +86,7 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('cat-show')->with('success', 'Category deleted successfully!');
     }
 }

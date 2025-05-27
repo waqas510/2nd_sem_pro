@@ -25,15 +25,18 @@
               {{-- value="{{ $cat->cat_name}}" --}}
                 <div class="mb-3">                 
                   <label  class="form-label">Update Category Name</label>
-                  <input type="text" class="form-control" name="cat_name" required>
+                  <input type="text" value="{{ $category->cat_name}}" class="form-control" name="cat_name" required>
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">Update Category Description</label>
-                  <input type="text" class="form-control" name="cat_des" required>
+                  <input type="text" value="{{ $category->cat_des}}" class="form-control" name="cat_des" required>
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label">Old Image/Icon</label><br>
+                  <img src="{{ asset('Admin/img/cat-images/', $category->cat_img)}}" alt="" height="50px" width="100px">
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">Update Category Image/Icon</label>
-                  <img src="{{ asset('Admin/img/cat-images/' )}}" alt="" height="50px" width="100px">
                   <input type="file" class="form-control" name="cat_img" required>
                 </div>
                 

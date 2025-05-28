@@ -5,15 +5,7 @@
 
 <!-- Breadcrumb Begin -->
 <br><br><br><br><br>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
 @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -32,19 +24,19 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore.</p>
-                    <ul>
+                    <ul> 
                         <li>
                             <i class="fa fa-map-marker"></i>
                             <h5>Address</h5>
                             <p>Plot 21 sector 21 korangi industrial area karachi</p>
-                        </li>
+                        </li><br>
                         <li>
                             <i class="fa fa-phone"></i>
                             <h5>Phone</h5>
                             <span>0310-8727132</span>
                             <span>0310-8727132</span>
-                        </li>
-                        <li>
+                        </li> <br>
+                        <li class="">
                             <i class="fa fa-envelope"></i>
                             <h5>Email</h5>
                             <p>waqasjadoon111@gmail.com</p>
@@ -62,24 +54,12 @@
                     <form method="post" action="{{ route('contact.store') }}">
                         @csrf
                         <div class="input__list">
-                            <input type="text" name="name" placeholder="Name">
-                                @error('name')
-                                <div class="text-danger">{{ $message }}</div>
-                                 @enderror
-
-                            <input type="email" name="email" placeholder="Email">
-                            @error('email')
-                                <div class="text-danger">{{ $message }}</div>
-                                 @enderror
-                            <input type="tel" name="phone" placeholder="Phone 03xx-xxxxxxx" pattern="03[0-9]{9}" maxlength="11">
-                            @error('phone')
-                                <div class="text-danger">{{ $message }}</div>
-                                 @enderror
+                            <input value="{{ old('name') }}" type="text" class="@error('name') is-invalid @enderror form-control w-100" name="name" placeholder="@error('name') {{ $message }} @else Enter Name @enderror">
+                            <input type="email" value="{{ old('email') }}" class="@error('email') is-invalid @enderror form-control w-100" name="email" placeholder="@error('email') {{ $message }} @else Enter Email @enderror">
+                            <input type="tel" value="{{ old('phone') }}" class="@error('phone') is-invalid @enderror form-control w-100" name="phone" placeholder="@error('phone') {{ $message }} @else Phone 03xx-xxxxxxx @enderror" pattern="03[0-9]{9}" maxlength="11">
                         </div>
-                        <textarea placeholder="MESSAGE" name="message"></textarea>
-                        @error('message')
-                                <div class="text-danger">{{ $message }}</div>
-                                 @enderror
+                        <textarea value="{{ old('message') }}" class="@error('message') is-invalid @enderror form-control w-100" placeholder="@error('message') {{ $message }} @else MESSAGE @enderror" name="message"></textarea>
+                        
                         <button type="submit" class="site-btn">SEND MESSAGE</button>
                     </form>
                 </div>

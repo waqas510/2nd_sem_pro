@@ -28,21 +28,21 @@ class ContactController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $rules = [
+{
+    // Validation + input fetch ek hi step me
+    $validated = $request->validate([
         'name' => 'required|string',
         'email' => 'required|email',
         'phone' => 'required|numeric',
         'message' => 'required|string',
-        ];
-        $validator = Validator::make($request->all(), [$rules]);
-        if($validator->fails()){
-            return redirect()->back()->withInput()->withErrors($validator);
-        }
-        
-            contact::create($request->all());
-            return redirect()->back()->with('success', 'Message sent successfully!');
-    }
+    ]);
+
+    // Agar validation pass ho jata hai to database me insert hoga
+    contact::create($validated);
+
+    // Success message ke saath redirect
+    return redirect()->back()->with('success', 'Message sent successfully!');
+}
 
     /**
      * Display the specified resource.

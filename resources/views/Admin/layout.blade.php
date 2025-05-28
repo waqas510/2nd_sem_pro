@@ -67,9 +67,9 @@
                             <a href="{{ url('product/show') }}" class="dropdown-item">Show All Songs</a>
                         </div>
                     </div>
-                    <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-tv me-2"></i>Shows</a>
                     <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-video me-2"></i>Videos</a>
                     <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Bookings</a>
+                    <a href="{{ route('message') }}" class="nav-item nav-link"><i class="fa fa-tv me-2"></i>Messages</a>
                     <a href="{{ url('#') }}" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Account</a>
                 </div>
             </nav>

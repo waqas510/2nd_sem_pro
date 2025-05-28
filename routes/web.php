@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenicatedSessionController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,7 @@ Route::middleware(['auth'])->get('/dashboard',function()
     return view('Admin.adminindex');
 })->name('dashboard');
 
+
+//contact form message route
+Route::resource('contact',ContactController::class);
+Route::get('message',[ContactController::class,'show'])->name('message');

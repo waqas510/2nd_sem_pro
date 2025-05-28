@@ -4,30 +4,22 @@
 @section('pageContent')
 
 <!-- Breadcrumb Begin -->
-<br><br><br>
-<div class="breadcrumb-option">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb__links">
-                    <a href="/"><i class="fa fa-home"></i> Home</a>
-                    <span>Contact</span>
-                </div>
-            </div>
-        </div>
+<br><br><br><br><br>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
-</div>
-<!-- Breadcrumb End -->
+@endif
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
-<!-- Map Begin -->
-<div class="map">
-    <div class="container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.5524090066037!2d-71.10245469994108!3d42.47980730490846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3748250c43a43%3A0xe1b9879a5e9b6657!2sWinter%20Street%20Public%20Parking%20Lot!5e0!3m2!1sen!2sbd!4v1577299251173!5m2!1sen!2sbd"
-            height="585" style="border:0;" allowfullscreen=""></iframe>
-    </div>
-</div>
-<!-- Map End -->
 
 <!-- Contact Section Begin -->
 <section class="contact spad">
@@ -67,13 +59,27 @@
                     </div>
                     <p>Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
                         gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                    <form action="#">
+                    <form method="post" action="{{ route('contact.store') }}">
+                        @csrf
                         <div class="input__list">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="Website">
+                            <input type="text" name="name" placeholder="Name">
+                                @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
+
+                            <input type="email" name="email" placeholder="Email">
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
+                            <input type="tel" name="phone" placeholder="Phone 03xx-xxxxxxx" pattern="03[0-9]{9}" maxlength="11">
+                            @error('phone')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
                         </div>
-                        <textarea placeholder="Comment"></textarea>
+                        <textarea placeholder="MESSAGE" name="message"></textarea>
+                        @error('message')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
                         <button type="submit" class="site-btn">SEND MESSAGE</button>
                     </form>
                 </div>
@@ -81,5 +87,15 @@
         </div>
     </div>
 </section>
+
+<!-- Map Begin -->
+<div class="map">
+    <div class="container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.5524090066037!2d-71.10245469994108!3d42.47980730490846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3748250c43a43%3A0xe1b9879a5e9b6657!2sWinter%20Street%20Public%20Parking%20Lot!5e0!3m2!1sen!2sbd!4v1577299251173!5m2!1sen!2sbd"
+            height="585" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+</div> <br>
+<!-- Map End -->
 <!-- Contact Section End -->
 @endsection

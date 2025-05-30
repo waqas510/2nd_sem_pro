@@ -5,13 +5,15 @@
 
 <!-- Breadcrumb Begin -->
 <br><br><br><br><br>
-
+<div class="container">
+    <div class="row">
 @if (session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success col-10 d-flex justify-content-center">
         {{ session('success') }}
     </div>
 @endif
-
+</div>
+</div>
 
 <!-- Contact Section Begin -->
 <section class="contact spad">

@@ -10,17 +10,19 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    {{-- bootstrap css --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
-    <link rel="stylesheet" href="css/rockville.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/barfiller.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/nowfont.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/rockville.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/style.css')}}" type="text/css">
 </head>
 <body>
     <!-- Header Section Begin -->
@@ -29,7 +31,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="Admin/img/Mixify_logo.png" alt="" height="60px" width="80px"></a>
+                        <a href="./index.html"><img src="{{ url('Admin/img/Mixify_logo.png') }}" alt="" height="60px" width="80px"></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
@@ -45,7 +47,7 @@
                                 <li><a href="#">Account</a>
                                     <ul class="dropdown">
                                         <li><a href="#">Name</a></li>
-                                        <li><a href="#">Setting</a></li>
+                                        <li><a href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">My Profile</a></li>
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                     </ul>
                                 </li>
@@ -160,19 +162,19 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{url('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url('js/bootstrap.min.js')}}"></script>
+    <script src="{{url('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{url('js/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{url('js/jquery.barfiller.js')}}"></script>
+    <script src="{{url('js/jquery.countdown.min.js')}}"></script>
+    <script src="{{url('js/jquery.slicknav.js')}}"></script>
+    <script src="{{url('js/owl.carousel.min.js')}}"></script>
+    <script src="{{url('js/main.js')}}"></script>
 
     <!-- Music Plugin -->
-    <script src="js/jquery.jplayer.min.js"></script>
-    <script src="js/jplayerInit.js"></script>
+    <script src="{{url('js/jquery.jplayer.min.js')}}"></script>
+    <script src="{{url('js/jplayerInit.js')}}"></script>
     
 </body>
 </html>
